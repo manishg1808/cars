@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Fleet Services | Premium Car Transportation</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar section starts -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">Luxury Fleet Services</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
+      <nav class="site-nav" id="siteNav">
+        <a href="services.html">Services</a>
+        <a href="fleet.html">Our Fleet</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="request-quote.html" class="btn btn-light">Request Quote</a>
+        <a href="login.html" class="nav-login" aria-label="Login"><i class="ri-user-3-line"></i></a>
+      </nav>
+    </div>
+  </header>
+  <!-- Navbar section ends -->
+
+  <!-- Hero banner section starts -->
+  <section class="hero">
+    <video class="hero-video" id="heroVideo" autoplay muted playsinline>
+      <source src="assets/VDO 1.mp4" type="video/mp4">
+    </video>
+    <img class="hero-interlude-image" id="heroInterludeImage" src="assets/11.jpg" alt="Luxury car">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow gradient-text">Welcome to Luxury Fleet Services Orlando Express</p>
+        <h1 id="heroDynamicText">Book Orlando Luxury Fleet Services Today</h1>
+        <p>
+          Orlando's best transportation service for luxury, safety, and comfort.<br>
+          Executive airport transfers, resort rides, cruise port drop-offs, and corporate travel.
+        </p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-gradient">Book Now</a>
+          <a href="fleet.html" class="btn btn-gradient">Our Fleet</a>
+        </div>
+      </div>
+      <form class="hero-enquiry-form" action="#" method="post">
+        <h3>Quick Enquiry</h3>
+        <label for="quick-name">Full Name</label>
+        <input id="quick-name" type="text" name="name" placeholder="Enter your name" required>
+        <label for="quick-phone">Phone Number</label>
+        <input id="quick-phone" type="tel" name="phone" placeholder="+1 XXX XXX XXXX" required>
+        <label for="quick-email">Email</label>
+        <input id="quick-email" type="email" name="email" placeholder="you@example.com">
+        <label for="quick-requirement">Requirement</label>
+        <textarea id="quick-requirement" name="requirement" rows="3"></textarea>
+        <button type="submit" class="btn btn-gradient">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+  <!-- Hero banner section ends -->
+
+  <!-- Services section starts -->
+  <section class="section">
+    <div class="container">
+      <h2>Our Core Services</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3>Airport Transfers</h3>
+          <p>Private pickups and drop-offs with flight tracking and fixed pricing.</p>
+        </article>
+        <article class="card">
+          <h3>Resort & Hotel Rides</h3>
+          <p>Direct transportation to major hotels, resorts, and theme park areas.</p>
+        </article>
+        <article class="card">
+          <h3>Cruise Port Service</h3>
+          <p>Smooth transfers to Port Canaveral for solo travelers, families, and groups.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- Services section ends -->
+
+  <!-- Orlando car services detailed section starts -->
+  <section class="section home-services-detailed">
+    <div class="container">
+      <div class="service-scroll-layout">
+        <aside class="service-sticky-col">
+          <div class="service-sticky-media">
+            <div class="service-section-head">
+              <h2>Orlando Car Services</h2>
+              <p class="page-intro">We Specialize In Tailored Transportation Services For Every Orlando Adventure</p>
+            </div>
+            <img id="servicePreviewImage" src="assets/home-service-theme-park.jpg" alt="Theme Park Transportation">
+            <div class="service-sticky-caption">
+              <h3 id="servicePreviewTitle">Theme Park Transportation</h3>
+              <p>Live Service Preview</p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="service-text-col service-text-right">
+          <article class="service-scroll-item active" data-image="assets/home-service-theme-park.jpg" data-alt="Theme Park Transportation">
+            <h3>Theme Park Transportation</h3>
+            <p>Ride to Orlando's theme parks in style. Enter a world of enchantment without the hassle of parking or navigation. Our Theme Park Transportation service is your golden ticket to/from Disney, Universal, and Orlando attractions with comfort and convenience.</p>
+          </article>
+
+          <article class="service-scroll-item" data-image="assets/home-service-cruise-port.jpg" data-alt="Cruise Port Transportation">
+            <h3>Cruise Port Transportation</h3>
+            <p>Set sail smoothly with seamless Cruise Port transfers. Our punctual and professional service provides timely travel to/from Port Canaveral, helping you start your ocean journey with confidence and peace of mind.</p>
+          </article>
+
+          <article class="service-scroll-item" data-image="assets/home-service-hotel.jpg" data-alt="Hotel Transportation">
+            <h3>Hotel Transportation</h3>
+            <p>Hotel transfers that extend the luxury of your stay. From check-in to check-out, we provide plush rides to and from your accommodation and make every transfer part of your premium Orlando experience.</p>
+          </article>
+
+          <article class="service-scroll-item" data-image="assets/home-service-corporate.jpg" data-alt="Corporate and Convention Transportation">
+            <h3>Corporate & Convention Transportation</h3>
+            <p>Professional convention transfers so you arrive prepared and focused. Our dedicated service supports individuals and groups with punctual, discreet transportation for business events and conferences.</p>
+          </article>
+
+          <article class="service-scroll-item" data-image="assets/home-service-nightlife.jpg" data-alt="Nightlife Transportation">
+            <h3>Nightlife Transportation</h3>
+            <p>Discover Orlando's vibrant nightlife with a personal chauffeur. Enjoy the city's hottest spots without parking stress or designated driver concerns in a safe, stylish, and convenient way.</p>
+          </article>
+
+          <article class="service-scroll-item" data-image="assets/home-service-airport.jpg" data-alt="Airport Transportation">
+            <h3>Airport Transportation</h3>
+            <p>Airport transfers that set the standard for comfort and reliability. We provide punctual service to and from Orlando Airport (MCO), ensuring a smooth transition from air to road with complete peace of mind.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Orlando car services detailed section ends -->
+
+  <!-- Detailed why choose section starts -->
+  <section class="section choose-detailed">
+    <div class="container">
+      <h2>Why Choose Luxury Fleet Services For Orlando Car Services</h2>
+      <p class="page-intro">Reliability, Comfort, and Class - The Luxury Fleet Services promise. Your journey is our priority, and this is why travelers trust us for Orlando car service needs.</p>
+
+      <div class="why-grid">
+        <article class="why-item">
+          <div class="why-icon"><i class="ri-road-map-line"></i></div>
+          <h3>Trusted Local Expertise</h3>
+          <p>Navigate Orlando with a team that knows every corner of the city. We provide top transportation from Orlando Airport (MCO) to hotels, Disney, Universal, Port Canaveral, and beyond.</p>
+        </article>
+        <article class="why-item">
+          <div class="why-icon"><i class="ri-shield-check-line"></i></div>
+          <h3>Impeccable Safety Standards</h3>
+          <p>Your safety is paramount. As a fully licensed and insured executive car service provider, we deliver the confidence and peace of mind you deserve.</p>
+        </article>
+        <article class="why-item">
+          <div class="why-icon"><i class="ri-car-line"></i></div>
+          <h3>Luxurious Fleet Choices</h3>
+          <p>Travel in comfort with our premium fleet, including five luxury cars and two spacious 14-seater vans for both individuals and large groups.</p>
+        </article>
+        <article class="why-item">
+          <div class="why-icon"><i class="ri-user-star-line"></i></div>
+          <h3>Professionalism Personified</h3>
+          <p>Our uniformed chauffeurs are courteous professionals, carefully vetted for expertise, reliability, and service excellence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- Detailed why choose section ends -->
+
+  <!-- How it works section starts -->
+  <section class="section how-works-section">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="page-intro">Follow the journey from service selection to confirmed transportation.</p>
+
+      <div class="how-works-timeline">
+        <div class="how-line"></div>
+
+        <article class="how-card left">
+          <div class="how-chip-row">
+            <span class="how-step">STEP 01</span>
+            <span class="how-icon"><i class="ri-search-line"></i></span>
+          </div>
+          <h3>Choose Your Car</h3>
+          <p>Browse options by category, fuel, seating, and comfort to shortlist the perfect ride.</p>
+        </article>
+
+        <article class="how-card right">
+          <div class="how-chip-row">
+            <span class="how-step">STEP 02</span>
+            <span class="how-icon"><i class="ri-calendar-check-line"></i></span>
+          </div>
+          <h3>Book & Confirm</h3>
+          <p>Pick date and pickup point, complete your details, and get instant booking confirmation.</p>
+        </article>
+
+        <article class="how-card left">
+          <div class="how-chip-row">
+            <span class="how-step">STEP 03</span>
+            <span class="how-icon"><i class="ri-car-line"></i></span>
+          </div>
+          <h3>Start Your Journey</h3>
+          <p>Meet your professional driver and enjoy a safe, smooth, and comfortable travel experience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- How it works section ends -->
+
+  <!-- Home request form section starts -->
+  <section class="section home-request-section">
+    <div class="container">
+      <h2>Quick Booking Request</h2>
+      <p class="page-intro">Share your trip details and our team will confirm availability quickly.</p>
+
+      <!-- Home booking request 70/30 layout starts -->
+      <div class="home-request-layout">
+        <form class="home-request-form" action="#" method="post">
+          <div class="home-form-grid">
+            <div class="home-field">
+              <label for="home-name">Name</label>
+              <input id="home-name" type="text" placeholder="Enter full name" required>
+            </div>
+            <div class="home-field">
+              <label for="home-email">Email</label>
+              <input id="home-email" type="email" placeholder="Enter email address" required>
+            </div>
+            <div class="home-field">
+              <label for="home-phone">Phone</label>
+              <input id="home-phone" type="tel" placeholder="Enter phone number" required>
+            </div>
+            <div class="home-field">
+              <label for="home-car">Choose Car</label>
+              <select id="home-car" required>
+                <option value="">Select car</option>
+                <option>Cadillac Escalade</option>
+                <option>Chevrolet Suburban</option>
+                <option>Lincoln MKT</option>
+                <option>Chrysler 300 Limo</option>
+                <option>Hummer Limo</option>
+                <option>Ford Transit</option>
+              </select>
+            </div>
+            <div class="home-field">
+              <label for="home-pickup-date">Pickup Date</label>
+              <input id="home-pickup-date" type="text" placeholder="dd-----yyyy" required>
+            </div>
+            <div class="home-field">
+              <label for="home-pickup-time">Pickup Time</label>
+              <input id="home-pickup-time" type="text" placeholder="--:-- --" required>
+            </div>
+            <div class="home-field">
+              <label for="home-pickup-location">Pickup Location</label>
+              <input id="home-pickup-location" type="text" placeholder="Pickup location" required>
+            </div>
+            <div class="home-field">
+              <label for="home-return-date">Return Date</label>
+              <input id="home-return-date" type="text" placeholder="dd-----yyyy" required>
+            </div>
+            <div class="home-field">
+              <label for="home-return-time">Return Time</label>
+              <input id="home-return-time" type="text" placeholder="--:-- --" required>
+            </div>
+            <div class="home-field">
+              <label for="home-return-location">Return Location</label>
+              <input id="home-return-location" type="text" placeholder="Return location" required>
+            </div>
+            <div class="home-field">
+              <label for="home-service-type">Service Type</label>
+              <select id="home-service-type" required>
+                <option value="">Select service type</option>
+                <option>Airport Transfer</option>
+                <option>Theme Park Transfer</option>
+                <option>Cruise Port Transfer</option>
+                <option>Corporate Transfer</option>
+                <option>Nightlife Transfer</option>
+              </select>
+            </div>
+            <div class="home-field">
+              <label for="home-passengers">Passengers</label>
+              <select id="home-passengers" required>
+                <option value="">Select passengers</option>
+                <option>1-2</option>
+                <option>3-4</option>
+                <option>5-7</option>
+                <option>8-12</option>
+                <option>13-14</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="home-field">
+            <label for="home-subject">Subject</label>
+            <input id="home-subject" type="text" placeholder="Ex: Airport transfer on 12 March" required>
+          </div>
+          <div class="home-field">
+            <label for="home-message">Message</label>
+            <textarea id="home-message" rows="4" placeholder="Write your requirement..." required></textarea>
+          </div>
+
+          <p class="home-form-note">All fields are required.</p>
+          <button type="submit" class="btn btn-gradient">Submit Request</button>
+        </form>
+
+        <aside class="home-request-quick">
+          <h3>Need Fast Booking?</h3>
+          <p>Share trip details and get quick confirmation from our team.</p>
+          <ul>
+            <li><i class="ri-time-line"></i> Response within minutes</li>
+            <li><i class="ri-shield-check-line"></i> Licensed and insured service</li>
+            <li><i class="ri-customer-service-2-line"></i> 24/7 trip assistance</li>
+            <li><i class="ri-phone-line"></i> +1-4073414310</li>
+          </ul>
+          <a href="request-quote.html" class="btn btn-gradient">Open Full Quote Form</a>
+        </aside>
+      </div>
+      <!-- Home booking request 70/30 layout ends -->
+    </div>
+  </section>
+  <!-- Home request form section ends -->
+
+  <!-- Google reviews marquee section starts -->
+  <section class="section reviews-section">
+    <div class="container">
+      <h2 class="reviews-title"><img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">Google Reviews</h2>
+      <p class="page-intro">Trusted by travelers for punctual service, luxury vehicles, and professional chauffeurs.</p>
+
+      <div class="reviews-marquee">
+        <div class="reviews-marquee-track">
+          <div class="reviews-group">
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Rahul M.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>On-time airport pickup and very smooth ride to Disney resort.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Sophia L.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Professional driver, clean SUV, and easy booking process.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>David C.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Cruise port transfer was punctual and stress-free.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Amelia R.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Great communication and premium comfort for family travel.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Michael T.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Corporate transfer was excellent, polite and reliable service.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Nina P.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Luxury limo looked amazing and driver was very courteous.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Kevin S.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Best private transportation option in Orlando so far.</p>
+            </article>
+          </div>
+
+          <div class="reviews-group" aria-hidden="true">
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Rahul M.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>On-time airport pickup and very smooth ride to Disney resort.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Sophia L.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Professional driver, clean SUV, and easy booking process.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>David C.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Cruise port transfer was punctual and stress-free.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Amelia R.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Great communication and premium comfort for family travel.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Michael T.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Corporate transfer was excellent, polite and reliable service.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Nina P.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Luxury limo looked amazing and driver was very courteous.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-head">
+                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Icon">
+                <strong>Kevin S.</strong>
+              </div>
+              <p class="review-stars">★★★★★</p>
+              <p>Best private transportation option in Orlando so far.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Google reviews marquee section ends -->
+
+  <!-- CTA section starts -->
+  <section class="cta-section">
+    <div class="container cta-wrap">
+      <div>
+        <h2>Ready To Book Your Ride?</h2>
+        <p>Fast confirmations, professional chauffeurs, and premium travel comfort.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gradient">Book Now</a>
+        <a href="request-quote.html" class="btn btn-gradient">Request Quote</a>
+      </div>
+    </div>
+  </section>
+  <!-- CTA section ends -->
+
+  <!-- Footer section starts -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Luxury Fleet Services</h3>
+        <p>Private transportation with comfort, punctuality, and professional drivers.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="fleet.html">Our Fleet</a></p>
+        <p><a href="gallery.html">Gallery</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><a href="request-quote.html">Request Quote</a></p>
+        <p>+1-4073414310</p>
+        <p>support@luxuryfleetservices.com</p>
+        <p>5549 Bay Lagoo Cir, Orlando FL 32</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Luxury Fleet Services. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- Footer section ends -->
+
+  <script src="script.js"></script>
+</body>
+</html>
