@@ -3,6 +3,7 @@ const siteHeader = document.getElementById("siteHeader");
 const menuBtn = document.getElementById("menuBtn");
 const siteNav = document.getElementById("siteNav");
 const heroVideo = document.getElementById("heroVideo");
+const heroVideoSecondary = document.getElementById("heroVideoSecondary");
 const heroInterludeImage = document.getElementById("heroInterludeImage");
 
 // Mobile menu toggle section
@@ -16,6 +17,12 @@ if (menuBtn && siteNav) {
 if (siteHeader) {
   const updateHeader = () => {
     const threshold = window.innerHeight * 0.5;
+    if (window.scrollY > 10) {
+      siteHeader.classList.add("is-scrolled");
+    } else {
+      siteHeader.classList.remove("is-scrolled");
+    }
+
     if (window.scrollY >= threshold) {
       siteHeader.classList.add("has-bg");
     } else {
@@ -29,19 +36,32 @@ if (siteHeader) {
 
 // Home banner video + end image section
 if (heroVideo) {
+  const isMobileHero = window.matchMedia("(max-width: 1024px)").matches;
+
   // Reset media state when page loads
   heroVideo.classList.remove("is-hidden");
+  if (heroVideoSecondary) {
+    heroVideoSecondary.classList.remove("is-active");
+  }
   if (heroInterludeImage) {
     heroInterludeImage.classList.remove("is-visible");
   }
 
-  // After video ends, show static image
-  heroVideo.addEventListener("ended", () => {
-    heroVideo.classList.add("is-hidden");
-    if (heroInterludeImage) {
-      heroInterludeImage.classList.add("is-visible");
+  if (isMobileHero) {
+    heroVideo.pause();
+    if (heroVideoSecondary) {
+      heroVideoSecondary.pause();
     }
-  });
+  } else {
+    // After first video ends, show and play second video
+    heroVideo.addEventListener("ended", () => {
+      heroVideo.classList.add("is-hidden");
+      if (heroVideoSecondary) {
+        heroVideoSecondary.classList.add("is-active");
+        heroVideoSecondary.play().catch(() => {});
+      }
+    });
+  }
 }
 
 const galleryItems = document.querySelectorAll(".gallery-item");
@@ -54,6 +74,8 @@ const serviceScrollItems = document.querySelectorAll(".service-scroll-item");
 const servicePreviewImage = document.getElementById("servicePreviewImage");
 const servicePreviewTitle = document.getElementById("servicePreviewTitle");
 const serviceTextRight = document.querySelector(".service-text-right");
+const countUpItems = document.querySelectorAll(".count-up");
+const ratesTables = document.querySelectorAll(".rates-table");
 
 // Gallery image popup (lightbox) section
 if (galleryItems.length && galleryLightbox && lightboxImage && lightboxCaption && lightboxClose) {
@@ -162,6 +184,114 @@ if (serviceScrollItems.length && servicePreviewImage && servicePreviewTitle) {
   });
 }
 
+// Rates table responsive labels section
+if (ratesTables.length) {
+  ratesTables.forEach((table) => {
+    const headers = Array.from(table.querySelectorAll("thead th")).map((cell) =>
+      cell.textContent.replace(/\s+/g, " ").trim()
+    );
+
+    table.querySelectorAll("tbody tr").forEach((row) => {
+      Array.from(row.children).forEach((cell, index) => {
+        if (headers[index]) {
+          cell.setAttribute("data-label", headers[index]);
+        }
+      });
+    });
+  });
+}
+
+// Scroll to top button with progress ring section
+(() => {
+  if (!document.body) {
+    return;
+  }
+
+  const scrollTopMarkup = `
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+      <span class="scroll-top-inner">
+        <i class="ri-arrow-up-line" aria-hidden="true"></i>
+      </span>
+    </button>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend", scrollTopMarkup);
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (!scrollTopBtn) {
+    return;
+  }
+
+  const updateScrollTopButton = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    const safeProgress = Math.max(0, Math.min(progress, 100));
+
+    scrollTopBtn.style.background = `conic-gradient(#c89a22 ${safeProgress}%, rgba(200, 154, 34, 0.16) ${safeProgress}%)`;
+
+    if (window.scrollY > 260) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  };
+
+  updateScrollTopButton();
+  window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+})();
+
+// Hero stats count-up section
+if (countUpItems.length) {
+  const animateCount = (item) => {
+    if (item.dataset.done === "true") {
+      return;
+    }
+
+    const target = Number(item.dataset.target || 0);
+    const suffix = item.dataset.suffix || "";
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+      item.textContent = `${value}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        item.textContent = `${target}${suffix}`;
+        item.dataset.done = "true";
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const countObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.5
+    }
+  );
+
+  countUpItems.forEach((item) => countObserver.observe(item));
+}
+
 // Request quote popup form section
 (() => {
   const quoteLinks = document.querySelectorAll('a[href="request-quote.html"]');
@@ -222,24 +352,28 @@ if (serviceScrollItems.length && servicePreviewImage && servicePreviewTitle) {
                 <option>Round Trip</option>
                 <option>Hourly Rental</option>
                 <option>Airport Transfer</option>
+                <option>Other</option>
               </select>
             </div>
           </div>
 
           <h3>Vehicle Selection</h3>
           <div class="quote-modal-grid two">
-            <div>
-              <label for="qm-car">Select Car</label>
-              <select id="qm-car" name="select_car">
-                <option>Cadillac Escalade</option>
-                <option>Chevrolet Suburban</option>
-                <option>Lincoln MKT</option>
-                <option>Chrysler 300 Limo</option>
-                <option>Hummer Limo</option>
-                <option>Ford Transit</option>
-                <option>Mercedes GLE</option>
-              </select>
-            </div>
+              <div>
+                <label for="qm-car">Select Car</label>
+                <select id="qm-car" name="select_car">
+                  <option>Chrysler 300 Limo</option>
+                  <option>Hummer Limo</option>
+                  <option>Lincoln MKT Limo</option>
+                  <option>Chevrolet Suburban</option>
+                  <option>Lincoln MKT</option>
+                  <option>Cadillac XTS</option>
+                  <option>Cadillac Escalade</option>
+                  <option>Mercedes GLE</option>
+                  <option>Ford Transit</option>
+                  <option>Other</option>
+                </select>
+              </div>
             <div>
               <label for="qm-car-type">Car Type</label>
               <select id="qm-car-type" name="car_type">
@@ -247,6 +381,7 @@ if (serviceScrollItems.length && servicePreviewImage && servicePreviewTitle) {
                 <option>SUV</option>
                 <option>Limo</option>
                 <option>Van</option>
+                <option>Other</option>
               </select>
             </div>
           </div>
@@ -262,6 +397,7 @@ if (serviceScrollItems.length && servicePreviewImage && servicePreviewTitle) {
                 <option>Event</option>
                 <option>Corporate Travel</option>
                 <option>Local City Ride</option>
+                <option>Other</option>
               </select>
             </div>
             <div>

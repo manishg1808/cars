@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 </head>
-<body class="inner-page">
+<body class="inner-page topbar-clear">
   <header class="site-header" id="siteHeader">
+    <div class="top-contact-bar">
+      <div class="container top-contact-wrap">
+        <a href="tel:+14073414310"><i class="ri-phone-line"></i><span>+1-4073414310</span></a>
+        <a href="mailto:support@luxuryfleetservices.com"><i class="ri-mail-line"></i><span>support@luxuryfleetservices.com</span></a>
+      </div>
+    </div>
     <div class="container nav-wrap">
-      <a href="index.html" class="brand">Luxury Fleet Services</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
+      <a href="index.html" class="brand"><img src="assets/logo.png" alt="Luxury Fleet Services logo"><span>Luxury Fleet Services</span></a>
+      <div class="nav-mobile-tools"><button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button><a href="tel:+14073414310" class="mobile-call" aria-label="Call Us"><i class="ri-phone-line"></i></a></div>
       <nav class="site-nav" id="siteNav">
         <a href="services.html" class="active">Services</a>
         <a href="fleet.html">Our Fleet</a>
@@ -36,11 +42,11 @@
     <!-- Rates section starts -->
     <section class="section">
       <div class="container">
-        <h2>Rates</h2>
-        <p class="page-intro">Pickup rates listed below. Final quote may vary based on exact route, timing, and stop requests.</p>
+        <h2>Orlando Transfer Rates by Pickup Location</h2>
+        <p class="page-intro">Professional fare chart for one-way and round-trip rides across Town Car, Van, Minivan, and SUV categories.</p>
 
         <article class="rate-block">
-          <h3>Pickup: Orlando International Airport (MCO) To Hotels & Resorts</h3>
+          <h3>Pickup: Orlando International Airport To Hotels & Resorts</h3>
           <div class="table-wrap">
             <table class="rates-table">
               <thead>
@@ -48,12 +54,13 @@
                   <th>To</th>
                   <th>One Way (Town Car)</th>
                   <th>One Way (Van)</th>
-                  <th>One Way (Mini Van)</th>
+                  <th>One Way (Minivan)</th>
                   <th>One Way (SUV)</th>
                   <th>Round Trip (Town Car)</th>
                   <th>Round Trip (Van)</th>
-                  <th>Round Trip (Mini Van)</th>
+                  <th>Round Trip (Minivan)</th>
                   <th>Round Trip (SUV)</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -61,31 +68,37 @@
                   <td>All WDW Disney Property Resorts</td>
                   <td>$95.00</td><td>$150.00</td><td>$110.00</td><td>$135.00</td>
                   <td>$185.00</td><td>$290.00</td><td>$215.00</td><td>$265.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Universal Studios Area Hotels</td>
                   <td>$95.00</td><td>$150.00</td><td>$110.00</td><td>$135.00</td>
                   <td>$185.00</td><td>$290.00</td><td>$215.00</td><td>$265.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
                 <tr>
                   <td>International Drive Hotels</td>
                   <td>$95.00</td><td>$150.00</td><td>$110.00</td><td>$135.00</td>
                   <td>$185.00</td><td>$290.00</td><td>$215.00</td><td>$265.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Disney Springs Hotels</td>
                   <td>$95.00</td><td>$150.00</td><td>$110.00</td><td>$135.00</td>
                   <td>$185.00</td><td>$290.00</td><td>$215.00</td><td>$265.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
                 <tr>
                   <td>Kissimmee 192 Area Hotels</td>
                   <td>$105.00</td><td>$170.00</td><td>$125.00</td><td>$150.00</td>
                   <td>$205.00</td><td>$315.00</td><td>$245.00</td><td>$290.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Omni Championsgate / Reunion</td>
                   <td>$125.00</td><td>$175.00</td><td>$135.00</td><td>$160.00</td>
                   <td>$245.00</td><td>$335.00</td><td>$265.00</td><td>$310.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
               </tbody>
             </table>
@@ -101,12 +114,13 @@
                   <th>To</th>
                   <th>One Way (Town Car)</th>
                   <th>One Way (Van)</th>
-                  <th>One Way (Mini Van)</th>
+                  <th>One Way (Minivan)</th>
                   <th>One Way (SUV)</th>
                   <th>Round Trip (Town Car)</th>
                   <th>Round Trip (Van)</th>
-                  <th>Round Trip (Mini Van)</th>
+                  <th>Round Trip (Minivan)</th>
                   <th>Round Trip (SUV)</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -114,11 +128,13 @@
                   <td>All WDW Disney Property Resorts</td>
                   <td>$90.00</td><td>$110.00</td><td>$90.00</td><td>$100.00</td>
                   <td>$175.00</td><td>$205.00</td><td>$175.00</td><td>$195.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Kissimmee 192 Area Hotels</td>
                   <td>$95.00</td><td>$120.00</td><td>$95.00</td><td>$105.00</td>
                   <td>$185.00</td><td>$230.00</td><td>$185.00</td><td>$205.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
               </tbody>
             </table>
@@ -134,12 +150,13 @@
                   <th>To</th>
                   <th>One Way (Town Car)</th>
                   <th>One Way (Van)</th>
-                  <th>One Way (Mini Van)</th>
+                  <th>One Way (Minivan)</th>
                   <th>One Way (SUV)</th>
                   <th>Round Trip (Town Car)</th>
                   <th>Round Trip (Van)</th>
-                  <th>Round Trip (Mini Van)</th>
+                  <th>Round Trip (Minivan)</th>
                   <th>Round Trip (SUV)</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -147,11 +164,13 @@
                   <td>All WDW Disney Property Resorts</td>
                   <td>$65.00</td><td>$100.00</td><td>$75.00</td><td>$85.00</td>
                   <td>$120.00</td><td>$190.00</td><td>$145.00</td><td>$165.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Kissimmee 192 Area Hotels</td>
                   <td>$80.00</td><td>$120.00</td><td>$95.00</td><td>$95.00</td>
                   <td>$150.00</td><td>$220.00</td><td>$185.00</td><td>$185.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
               </tbody>
             </table>
@@ -167,12 +186,13 @@
                   <th>To</th>
                   <th>One Way (Town Car)</th>
                   <th>One Way (Van)</th>
-                  <th>One Way (Mini Van)</th>
+                  <th>One Way (Minivan)</th>
                   <th>One Way (SUV)</th>
                   <th>Round Trip (Town Car)</th>
                   <th>Round Trip (Van)</th>
-                  <th>Round Trip (Mini Van)</th>
+                  <th>Round Trip (Minivan)</th>
                   <th>Round Trip (SUV)</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -180,11 +200,85 @@
                   <td>All WDW Disney Property Resorts</td>
                   <td>$155.00</td><td>$215.00</td><td>$180.00</td><td>$195.00</td>
                   <td>$285.00</td><td>$395.00</td><td>$325.00</td><td>$360.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
                 </tr>
                 <tr>
                   <td>Universal Studios Area Hotels</td>
                   <td>$155.00</td><td>$215.00</td><td>$180.00</td><td>$195.00</td>
                   <td>$285.00</td><td>$395.00</td><td>$325.00</td><td>$360.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="rate-block">
+          <h3>Pickup: Port Canaveral Transportation Rates</h3>
+          <div class="table-wrap">
+            <table class="rates-table">
+              <thead>
+                <tr>
+                  <th>To</th>
+                  <th>One Way (Town Car)</th>
+                  <th>One Way (Van)</th>
+                  <th>One Way (Minivan)</th>
+                  <th>One Way (SUV)</th>
+                  <th>Round Trip (Town Car)</th>
+                  <th>Round Trip (Van)</th>
+                  <th>Round Trip (Minivan)</th>
+                  <th>Round Trip (SUV)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Port Canaveral (From Orlando Airport)</td>
+                  <td>$155.00</td><td>$210.00</td><td>$175.00</td><td>$195.00</td>
+                  <td>$290.00</td><td>$395.00</td><td>$345.00</td><td>$375.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
+                </tr>
+                <tr>
+                  <td>Port Canaveral (From Disney Area Hotels)</td>
+                  <td>$185.00</td><td>$250.00</td><td>$195.00</td><td>$230.00</td>
+                  <td>$345.00</td><td>$495.00</td><td>$365.00</td><td>$430.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="rate-block">
+          <h3>Pickup: Orlando</h3>
+          <div class="table-wrap">
+            <table class="rates-table">
+              <thead>
+                <tr>
+                  <th>To</th>
+                  <th>One Way (Town Car)</th>
+                  <th>One Way (Van)</th>
+                  <th>One Way (Minivan)</th>
+                  <th>One Way (SUV)</th>
+                  <th>Round Trip (Town Car)</th>
+                  <th>Round Trip (Van)</th>
+                  <th>Round Trip (Minivan)</th>
+                  <th>Round Trip (SUV)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tampa</td>
+                  <td>$155.00</td><td>$155.00</td><td>$155.00</td><td>$155.00</td>
+                  <td>$290.00</td><td>$290.00</td><td>$290.00</td><td>$290.00</td>
+                  <td class="table-action-cell"><a href="request-quote.html" class="table-action-btn book">Book Now</a></td>
+                </tr>
+                <tr>
+                  <td>Miami</td>
+                  <td>$185.00</td><td>$185.00</td><td>$185.00</td><td>$185.00</td>
+                  <td>$345.00</td><td>$345.00</td><td>$345.00</td><td>$345.00</td>
+                  <td class="table-action-cell"><a href="tel:+14073414310" class="table-action-btn call">Call Now</a></td>
                 </tr>
               </tbody>
             </table>
@@ -201,23 +295,102 @@
           <h2>Orlando Car Services</h2>
           <p class="page-intro">We specialize in tailored transportation services for every Orlando adventure.</p>
           <ul class="services-highlight-list">
-            <li><strong>Theme Park Transportation:</strong> Ride to Disney, Universal, and Orlando attractions with comfort and convenience.</li>
-            <li><strong>Cruise Port Transportation:</strong> Seamless and punctual transfers to and from Port Canaveral.</li>
-            <li><strong>Hotel Transportation:</strong> Smooth check-in and check-out transfers for luxury and business stays.</li>
-            <li><strong>Corporate & Convention Transportation:</strong> Professional travel for meetings, events, and executive schedules.</li>
-            <li><strong>Nightlife Transportation:</strong> Safe and stylish city rides with private chauffeur support.</li>
-            <li><strong>Airport Transportation:</strong> Reliable transfers to and from Orlando Airport (MCO).</li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-theme-park.jpg" alt="Theme Park Transportation">
+              <div class="services-item-copy">
+                <h3>Theme Park Transportation</h3>
+                <p>Ride to Disney, Universal, and Orlando attractions with comfort and convenience.</p>
+              </div>
+            </li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-cruise-port.jpg" alt="Cruise Port Transportation">
+              <div class="services-item-copy">
+                <h3>Cruise Port Transportation</h3>
+                <p>Seamless and punctual transfers to and from Port Canaveral.</p>
+              </div>
+            </li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-hotel.jpg" alt="Hotel Transportation">
+              <div class="services-item-copy">
+                <h3>Hotel Transportation</h3>
+                <p>Smooth check-in and check-out transfers for luxury and business stays.</p>
+              </div>
+            </li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-corporate.jpg" alt="Corporate and Convention Transportation">
+              <div class="services-item-copy">
+                <h3>Corporate & Convention Transportation</h3>
+                <p>Professional travel for meetings, events, and executive schedules.</p>
+              </div>
+            </li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-nightlife.jpg" alt="Nightlife Transportation">
+              <div class="services-item-copy">
+                <h3>Nightlife Transportation</h3>
+                <p>Safe and stylish city rides with private chauffeur support.</p>
+              </div>
+            </li>
+            <li>
+              <img class="services-item-image" src="assets/home-service-airport.jpg" alt="Airport Transportation">
+              <div class="services-item-copy">
+                <h3>Airport Transportation</h3>
+                <p>Reliable transfers to and from Orlando Airport (MCO).</p>
+              </div>
+            </li>
           </ul>
-        </div>
-        <div class="services-highlight-media">
-          <img src="assets/home-service-airport.jpg" alt="Orlando car service vehicle">
+          <div class="services-highlight-action">
+            <a href="request-quote.html" class="btn btn-gradient">Book Now</a>
+          </div>
+          <!-- Services stats section starts -->
+          <div class="services-stats hero-stats">
+            <div class="hero-stat-item">
+              <strong><span class="count-up" data-target="500" data-suffix="+">0</span></strong>
+              <span>Daily Trips</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong><span class="count-up" data-target="50" data-suffix="+">0</span></strong>
+              <span>Airport &amp; Cruise Routes</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong><span class="count-up" data-target="24" data-suffix="/7">0</span></strong>
+              <span>Live Support</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong><span class="count-up" data-target="15" data-suffix="+">0</span></strong>
+              <span>Years Experience</span>
+            </div>
+          </div>
+          <!-- Services stats section ends -->
         </div>
       </div>
-    </section>
-    <!-- Services page Orlando car services section ends -->
+      </section>
+      <!-- Services page Orlando car services section ends -->
 
-    <!-- Services page why choose section starts -->
-    <section class="section services-why">
+      <!-- Services page who we are section starts -->
+      <section class="section services-about-parallax">
+        <div class="services-about-overlay"></div>
+        <div class="container services-about-shell">
+          <div class="services-about-card">
+            <p class="services-about-eyebrow">Who We Are</p>
+            <h2>Trusted Orlando Transportation With Safety, Comfort, And Local Expertise</h2>
+            <p>Luxury fleet services is an Orlando based car service company and your trusted local partner for all your transit needs. We provide reliable transportation from Orlando Airport (MCO) to hotels, Disney, Universal, Port Canaveral, and beyond.</p>
+            <p>As a licensed and insured operator, we maintain high safety standards, dependable service, and professional customer care. Our fleet includes premium cars and spacious 14-seater vans, giving the right fit for individual travelers, families, and larger groups. Our drivers are thoroughly vetted, uniformed, and focused on a safe, secure, and comfortable journey every time.</p>
+            <div class="services-about-points">
+              <span><i class="ri-shield-check-line"></i> Licensed &amp; Insured</span>
+              <span><i class="ri-road-map-line"></i> Local Orlando Routes</span>
+              <span><i class="ri-user-star-line"></i> Professional Chauffeurs</span>
+              <span><i class="ri-car-line"></i> Premium Fleet Options</span>
+            </div>
+            <div class="services-about-actions">
+              <a href="request-quote.html" class="btn btn-gradient">Book Your Ride</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services page who we are section ends -->
+
+      <!-- Services page why choose section starts -->
+      <section class="section services-why">
       <div class="container">
         <h2>Why Choose Luxury Fleet Services For Orlando Car Services</h2>
         <p class="page-intro">Reliability, comfort, and class with every trip.</p>
@@ -247,24 +420,34 @@
     <!-- Services page how it works section starts -->
     <section class="section services-how">
       <div class="container">
-        <h2>How It Works</h2>
-        <p class="page-intro">A simple booking process from selection to drop-off.</p>
+        <h2>Service Process</h2>
+        <p class="page-intro">A clear 5-step flow from choosing a service to starting your trip.</p>
 
         <div class="services-how-steps">
           <article class="services-step">
             <span class="services-step-no">01</span>
-            <h3>Choose Your Car</h3>
-            <p>Select the right vehicle based on comfort, luggage space, and passenger count.</p>
+            <h3>Choose Service Type</h3>
+            <p>Select the transportation service that fits your travel needs.</p>
           </article>
           <article class="services-step">
             <span class="services-step-no">02</span>
-            <h3>Book & Confirm</h3>
-            <p>Share pickup date, time, and route details to get quick booking confirmation.</p>
+            <h3>Select Pickup Date</h3>
+            <p>Pick convenient date and location.</p>
           </article>
           <article class="services-step">
             <span class="services-step-no">03</span>
-            <h3>Start Your Journey</h3>
-            <p>Meet your professional driver and travel safely with timely service support.</p>
+            <h3>Share Trip Details</h3>
+            <p>Share pickup, destination, passenger count, and timing securely.</p>
+          </article>
+          <article class="services-step">
+            <span class="services-step-no">04</span>
+            <h3>Confirm Booking</h3>
+            <p>Instant confirmation via email and WhatsApp.</p>
+          </article>
+          <article class="services-step">
+            <span class="services-step-no">05</span>
+            <h3>Start Your Trip</h3>
+            <p>Meet your driver and begin your journey comfortably.</p>
           </article>
         </div>
       </div>
@@ -285,31 +468,62 @@
     </div>
   </section>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <h3>Luxury Fleet Services</h3>
-        <p>Private transportation with comfort, punctuality, and professional drivers.</p>
+      <div class="footer-brand-block">
+        <a href="index.html" class="footer-brand">
+          <img src="assets/logo.png" alt="Luxury Fleet Services logo">
+          <span>Luxury Fleet Services</span>
+        </a>
+        <p>Executive transportation with punctual chauffeurs, premium vehicles, and dependable private rides across Orlando.</p>
+        <div class="footer-socials">
+          <a href="tel:+14073414310" aria-label="Call Us"><i class="ri-phone-line"></i></a>
+          <a href="mailto:support@luxuryfleetservices.com" aria-label="Email Us"><i class="ri-mail-line"></i></a>
+          <a href="contact.html" aria-label="Visit Contact Page"><i class="ri-map-pin-line"></i></a>
+        </div>
       </div>
       <div>
         <h4>Quick Links</h4>
         <p><a href="services.html">Services</a></p>
         <p><a href="fleet.html">Our Fleet</a></p>
         <p><a href="gallery.html">Gallery</a></p>
+        <p><a href="contact.html">Contact</a></p>
       </div>
       <div>
-        <h4>Contact</h4>
-        <p><a href="contact.html">Contact Us</a></p>
-        <p><a href="request-quote.html">Request Quote</a></p>
+        <h4>Popular Services</h4>
+        <p>Airport Transfers</p>
+        <p>Cruise Port Transfers</p>
+        <p>Hotel Transportation</p>
+        <p>Corporate Travel</p>
+      </div>
+              <div>
+          <h4>Fleet Options</h4>
+          <p><a href="fleet.html">Chrysler 300 Limo</a></p>
+          <p><a href="fleet.html">Hummer Limo</a></p>
+          <p><a href="fleet.html">Lincoln MKT Limo</a></p>
+          <p><a href="fleet.html">Chevrolet Suburban</a></p>
+          <p><a href="fleet.html">Lincoln MKT</a></p>
+          <p><a href="fleet.html">Cadillac XTS</a></p>
+          <p><a href="fleet.html">Cadillac Escalade</a></p>
+          <p><a href="fleet.html">Mercedes GLE</a></p>
+          <p><a href="fleet.html">Ford Transit</a></p>
+        </div>
+        <div>
+          <h4>Contact</h4>
         <p>+1-4073414310</p>
         <p>support@luxuryfleetservices.com</p>
         <p>5549 Bay Lagoo Cir, Orlando FL 32</p>
+        <p><a href="request-quote.html">Request Quote</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 Luxury Fleet Services. All rights reserved.</p>
+      <p>Luxury rides, every route.</p>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
