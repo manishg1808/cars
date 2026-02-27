@@ -362,15 +362,9 @@ if (countUpItems.length) {
               <div>
                 <label for="qm-car">Select Car</label>
                 <select id="qm-car" name="select_car">
-                  <option>Chrysler 300 Limo</option>
-                  <option>Hummer Limo</option>
-                  <option>Lincoln MKT Limo</option>
-                  <option>Chevrolet Suburban</option>
-                  <option>Lincoln MKT</option>
-                  <option>Cadillac XTS</option>
-                  <option>Cadillac Escalade</option>
-                  <option>Mercedes GLE</option>
-                  <option>Ford Transit</option>
+                  <option>Executive Sedan</option>
+                  <option>Executive SUV</option>
+                  <option>Sprinter Van</option>
                   <option>Other</option>
                 </select>
               </div>
