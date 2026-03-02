@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury Fleet Services | Premium Car Transportation</title>
+  <title>Luxury Fleet Services | Orlando Luxury Car Service</title>
+  <meta name="description" content="Luxury Fleet Services provides Orlando luxury car service, airport transfers, executive SUV rides, sprinter van transportation, hotel pickup, and private chauffeur service in Orlando, Florida.">
+  <meta name="keywords" content="Luxury Fleet Services, local SEO, Orlando luxury car service, Orlando airport transfer, executive sedan Orlando, executive SUV Orlando, sprinter van Orlando, private car service Orlando, chauffeur service Orlando, limo and car rental Orlando">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -74,8 +77,10 @@
         </div>
         <!-- Hero stats section ends -->
       </div>
-      <form class="hero-enquiry-form" action="#" method="post">
+      <form class="hero-enquiry-form" action="submit-form.php" method="post">
         <h3>Quick Enquiry</h3>
+        <input type="hidden" name="form_title" value="Homepage Quick Enquiry">
+        <input type="hidden" name="redirect_to" value="index.html">
         <label for="quick-name">Full Name</label>
         <input id="quick-name" type="text" name="name" placeholder="Enter your name" required>
         <label for="quick-phone">Phone Number</label>
@@ -110,6 +115,7 @@
             <p><span><i class="ri-user-3-line"></i></span> Passengers: 3</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 3 Bags</p>
           </div>
+          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -126,6 +132,7 @@
             <p><span><i class="ri-group-line"></i></span> Passengers: 6</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 6 Bags</p>
           </div>
+          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -142,6 +149,7 @@
             <p><span><i class="ri-group-line"></i></span> Passengers: 14</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 12 Bags</p>
           </div>
+          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -424,23 +432,25 @@
 
       <!-- Home booking request 70/30 layout starts -->
       <div class="home-request-layout">
-        <form class="home-request-form contact-request-form" action="#" method="post">
+        <form class="home-request-form contact-request-form" action="submit-form.php" method="post">
+          <input type="hidden" name="form_title" value="Homepage Booking Request">
+          <input type="hidden" name="redirect_to" value="index.html">
           <div class="home-form-grid contact-form-grid">
             <div class="home-field">
               <label for="home-name">Name</label>
-              <input id="home-name" type="text" placeholder="Enter full name" required>
+              <input id="home-name" name="name" type="text" placeholder="Enter full name" required>
             </div>
             <div class="home-field">
               <label for="home-email">Email</label>
-              <input id="home-email" type="email" placeholder="Enter email address" required>
+              <input id="home-email" name="email" type="email" placeholder="Enter email address" required>
             </div>
             <div class="home-field">
               <label for="home-phone">Phone</label>
-              <input id="home-phone" type="tel" placeholder="Enter phone number" required>
+              <input id="home-phone" name="phone" type="tel" placeholder="Enter phone number" required>
             </div>
               <div class="home-field">
                 <label for="home-car">Choose Car</label>
-                <select id="home-car" required>
+                <select id="home-car" name="car" required>
                   <option value="">Select car</option>
                   <option>Executive Sedan</option>
                   <option>Executive SUV</option>
@@ -449,31 +459,31 @@
               </div>
             <div class="home-field">
               <label for="home-pickup-date">Pickup Date</label>
-              <input id="home-pickup-date" type="date" required>
+              <input id="home-pickup-date" name="pickup_date" type="date" required>
             </div>
             <div class="home-field">
               <label for="home-pickup-time">Pickup Time</label>
-              <input id="home-pickup-time" type="time" required>
+              <input id="home-pickup-time" name="pickup_time" type="time" required>
             </div>
             <div class="home-field span-2">
               <label for="home-pickup-location">Pickup Location</label>
-              <input id="home-pickup-location" type="text" placeholder="Pickup location" required>
+              <input id="home-pickup-location" name="pickup_location" type="text" placeholder="Pickup location" required>
             </div>
             <div class="home-field">
               <label for="home-return-date">Return Date</label>
-              <input id="home-return-date" type="date" required>
+              <input id="home-return-date" name="return_date" type="date" required>
             </div>
             <div class="home-field">
               <label for="home-return-time">Return Time</label>
-              <input id="home-return-time" type="time" required>
+              <input id="home-return-time" name="return_time" type="time" required>
             </div>
             <div class="home-field span-2">
               <label for="home-return-location">Return Location</label>
-              <input id="home-return-location" type="text" placeholder="Return location" required>
+              <input id="home-return-location" name="return_location" type="text" placeholder="Return location" required>
             </div>
             <div class="home-field">
               <label for="home-service-type">Service Type</label>
-              <select id="home-service-type" required>
+              <select id="home-service-type" name="service_type" required>
                 <option value="">Select service type</option>
                 <option>Airport Transfer</option>
                 <option>Theme Park Transfer</option>
@@ -484,7 +494,7 @@
             </div>
             <div class="home-field">
               <label for="home-passengers">Passengers</label>
-              <select id="home-passengers" required>
+              <select id="home-passengers" name="passengers" required>
                 <option value="">Select passengers</option>
                 <option>1-2</option>
                 <option>3-4</option>
@@ -493,19 +503,36 @@
                 <option>13-14</option>
               </select>
             </div>
+            <div class="home-field">
+              <label for="home-airline">Airline</label>
+              <input id="home-airline" name="airline" type="text" placeholder="Ex: Delta, United">
+            </div>
+            <div class="home-field">
+              <label for="home-flight-number">Flight Number</label>
+              <input id="home-flight-number" name="flight_number" type="text" placeholder="Ex: DL1234">
+            </div>
+            <div class="home-field span-2">
+              <label for="home-child-seat">Child Seat Request</label>
+              <select id="home-child-seat" name="child_seat">
+                <option value="">No child seat needed</option>
+                <option>Newborn</option>
+                <option>Toddler</option>
+                <option>Booster</option>
+              </select>
+            </div>
 
             <div class="home-field span-2">
               <label for="home-subject">Subject</label>
-              <input id="home-subject" type="text" placeholder="Ex: Airport transfer on 12 March" required>
+              <input id="home-subject" name="subject" type="text" placeholder="Ex: Airport transfer on 12 March" required>
             </div>
             <div class="home-field span-2">
               <label for="home-message">Message</label>
-              <textarea id="home-message" rows="4" placeholder="Write your requirement..." required></textarea>
+              <textarea id="home-message" name="message" rows="4" placeholder="Write your requirement..." required></textarea>
             </div>
           </div>
 
           <div class="contact-request-actions">
-            <p class="home-form-note">All fields are required.</p>
+            <p class="home-form-note">Trip details are required. Add airline, flight, and child seat details if needed.</p>
             <button type="submit" class="btn btn-gradient">Submit Request</button>
           </div>
         </form>
@@ -757,7 +784,6 @@
       </div>
       <div class="cta-actions">
         <a href="contact.html" class="btn btn-gradient">Book Now</a>
-        <a href="contact.html" class="btn btn-gradient">Book Now</a>
       </div>
     </div>
   </section>
@@ -797,6 +823,9 @@
           <p><a href="fleet.html">Executive Sedan</a></p>
           <p><a href="fleet.html">Executive SUV</a></p>
           <p><a href="fleet.html">Sprinter Van</a></p>
+          <p><a href="fleet.html">Newborn Seat</a></p>
+          <p><a href="fleet.html">Toddler Seat</a></p>
+          <p><a href="fleet.html">Booster Seat</a></p>
         </div>
         <div>
           <h4>Contact</h4>

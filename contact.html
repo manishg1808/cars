@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Luxury Fleet Services</title>
+  <title>Luxury Fleet Services | Contact Orlando Car Service</title>
+  <meta name="description" content="Contact Luxury Fleet Services for Orlando airport transfers, private car bookings, executive sedan service, executive SUV rides, and sprinter van reservations with fast booking support.">
+  <meta name="keywords" content="Luxury Fleet Services, local SEO, contact Orlando car service, Orlando transportation booking, executive sedan booking, executive SUV booking, sprinter van booking, airport car service contact, chauffeur booking Orlando, private ride Orlando">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -79,8 +82,10 @@
             </div>
           </div>
 
-          <form class="home-request-form contact-request-form" action="#" method="post">
+          <form class="home-request-form contact-request-form" action="submit-form.php" method="post">
             <h2>Send Enquiry</h2>
+            <input type="hidden" name="form_title" value="Contact Page Enquiry">
+            <input type="hidden" name="redirect_to" value="contact.html">
 
             <div class="home-form-grid contact-form-grid">
               <div class="home-field">
@@ -161,6 +166,23 @@
                   <option>13-14</option>
                 </select>
               </div>
+              <div class="home-field">
+                <label for="contact-airline">Airline</label>
+                <input id="contact-airline" name="airline" type="text" placeholder="Ex: Delta, United">
+              </div>
+              <div class="home-field">
+                <label for="contact-flight-number">Flight Number</label>
+                <input id="contact-flight-number" name="flight_number" type="text" placeholder="Ex: DL1234">
+              </div>
+              <div class="home-field span-2">
+                <label for="contact-child-seat">Child Seat Request</label>
+                <select id="contact-child-seat" name="child_seat">
+                  <option value="">No child seat needed</option>
+                  <option>Newborn</option>
+                  <option>Toddler</option>
+                  <option>Booster</option>
+                </select>
+              </div>
 
               <div class="home-field span-2">
                 <label for="contact-subject">Subject</label>
@@ -174,7 +196,7 @@
             </div>
 
             <div class="contact-request-actions">
-              <p class="home-form-note">All fields are required.</p>
+              <p class="home-form-note">Trip details are required. Add airline, flight, and child seat details if needed.</p>
               <button type="submit" class="btn btn-gradient">Submit Request</button>
             </div>
           </form>
@@ -192,7 +214,6 @@
         <p>Our team is ready to confirm availability and schedule your pickup.</p>
       </div>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gradient">Book Now</a>
         <a href="contact.html" class="btn btn-gradient">Book Now</a>
       </div>
     </div>
@@ -233,6 +254,9 @@
           <p><a href="fleet.html">Executive Sedan</a></p>
           <p><a href="fleet.html">Executive SUV</a></p>
           <p><a href="fleet.html">Sprinter Van</a></p>
+          <p><a href="fleet.html">Newborn Seat</a></p>
+          <p><a href="fleet.html">Toddler Seat</a></p>
+          <p><a href="fleet.html">Booster Seat</a></p>
         </div>
         <div>
           <h4>Contact</h4>

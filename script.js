@@ -77,6 +77,33 @@ const serviceTextRight = document.querySelector(".service-text-right");
 const countUpItems = document.querySelectorAll(".count-up");
 const ratesTables = document.querySelectorAll(".rates-table");
 
+// Shared form submit feedback
+(() => {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("form_status");
+
+  if (!status) {
+    return;
+  }
+
+  const banner = document.createElement("div");
+  banner.className = `form-feedback-banner ${status === "success" ? "is-success" : "is-error"}`;
+  banner.textContent =
+    status === "success"
+      ? "Your request was sent successfully. We will contact you shortly."
+      : "We could not send your request right now. Please try again or call us directly.";
+
+  const anchor = document.querySelector(".page-main, .hero, body");
+  if (anchor && anchor.parentNode) {
+    anchor.parentNode.insertBefore(banner, anchor);
+  }
+
+  params.delete("form_status");
+  const cleanQuery = params.toString();
+  const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ""}${window.location.hash}`;
+  window.history.replaceState({}, document.title, cleanUrl);
+})();
+
 // Gallery image popup (lightbox) section
 if (galleryItems.length && galleryLightbox && lightboxImage && lightboxCaption && lightboxClose) {
   const closeLightbox = () => {
@@ -120,9 +147,18 @@ if (galleryItems.length && galleryLightbox && lightboxImage && lightboxCaption &
 // Home hero changing text section
 if (heroDynamicText) {
   const heroLines = [
-    "Book Orlando Luxury Fleet Services Today",
-    "Travel In Luxury, Safety & Comfort",
-    "Premium Orlando Rides, On Time Every Time"
+    {
+      html: "Book Orlando Luxury Fleet Services Today",
+      compact: false,
+    },
+    {
+      html: "Travel In Luxury, Safety & Comfort",
+      compact: false,
+    },
+    {
+      html: "Premium Orlando Rides,<br>On Time Every Time",
+      compact: true,
+    }
   ];
   let lineIndex = 0;
 
@@ -130,7 +166,9 @@ if (heroDynamicText) {
     heroDynamicText.classList.add("text-swap-out");
     setTimeout(() => {
       lineIndex = (lineIndex + 1) % heroLines.length;
-      heroDynamicText.textContent = heroLines[lineIndex];
+      const activeLine = heroLines[lineIndex];
+      heroDynamicText.innerHTML = activeLine.html;
+      heroDynamicText.classList.toggle("is-compact", activeLine.compact);
       heroDynamicText.classList.remove("text-swap-out");
       heroDynamicText.classList.add("text-swap-in");
       setTimeout(() => {
@@ -306,7 +344,9 @@ if (countUpItems.length) {
         <h2 id="quoteModalTitle">Quick Quote Request</h2>
         <p>Share your trip details and our team will contact you shortly.</p>
 
-        <form class="quote-modal-form" action="#" method="post">
+        <form class="quote-modal-form" action="submit-form.php" method="post">
+          <input type="hidden" name="form_title" value="Quick Quote Modal">
+          <input type="hidden" name="redirect_to" value="${window.location.pathname.split("/").pop() || "index.html"}">
           <h3>Basic Contact Info</h3>
           <div class="quote-modal-grid two">
             <div>

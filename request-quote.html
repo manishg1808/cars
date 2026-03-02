@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Now | Luxury Fleet Services</title>
+  <title>Luxury Fleet Services | Book Your Orlando Ride</title>
+  <meta name="description" content="Book your Orlando ride with Luxury Fleet Services for executive sedan, executive SUV, and sprinter van transportation, including airport transfers, private rides, and chauffeur service.">
+  <meta name="keywords" content="Luxury Fleet Services, local SEO, book Orlando car service, book airport transfer Orlando, executive sedan reservation, executive SUV reservation, sprinter van reservation, private ride booking, chauffeur booking, luxury transportation Orlando">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -41,24 +44,26 @@
     <section class="section">
       <div class="container">
         <p class="page-intro">Submit your travel information and receive a quick booking response.</p>
-        <form class="quote-form card">
+        <form class="quote-form card" action="submit-form.php" method="post">
+          <input type="hidden" name="form_title" value="Book Now Page Request">
+          <input type="hidden" name="redirect_to" value="request-quote.html">
           <label for="name">Full Name</label>
-          <input id="name" type="text" placeholder="Your name" required>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
 
           <label for="phone">Phone</label>
-          <input id="phone" type="tel" placeholder="Your phone number" required>
+          <input id="phone" name="phone" type="tel" placeholder="Your phone number" required>
 
           <label for="pickup">Pickup Location</label>
-          <input id="pickup" type="text" placeholder="Airport, Hotel, Address" required>
+          <input id="pickup" name="pickup_location" type="text" placeholder="Airport, Hotel, Address" required>
 
           <label for="drop">Drop Location</label>
-          <input id="drop" type="text" placeholder="Destination" required>
+          <input id="drop" name="drop_location" type="text" placeholder="Destination" required>
 
           <label for="date">Date</label>
-          <input id="date" type="date" required>
+          <input id="date" name="pickup_date" type="date" required>
 
           <label for="message">Notes</label>
-          <textarea id="message" rows="4" placeholder="Passengers, luggage, special request"></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="Passengers, luggage, special request"></textarea>
 
           <button type="submit" class="btn btn-primary">Submit Request</button>
         </form>
@@ -73,7 +78,6 @@
         <p>Contact our team directly for urgent booking support and quick scheduling.</p>
       </div>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gradient">Book Now</a>
         <a href="contact.html" class="btn btn-gradient">Book Now</a>
       </div>
     </div>
@@ -112,6 +116,9 @@
           <p><a href="fleet.html">Executive Sedan</a></p>
           <p><a href="fleet.html">Executive SUV</a></p>
           <p><a href="fleet.html">Sprinter Van</a></p>
+          <p><a href="fleet.html">Newborn Seat</a></p>
+          <p><a href="fleet.html">Toddler Seat</a></p>
+          <p><a href="fleet.html">Booster Seat</a></p>
         </div>
         <div>
           <h4>Contact</h4>

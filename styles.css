@@ -600,6 +600,11 @@ a {
   transition: opacity 0.38s ease, transform 0.38s ease, filter 0.38s ease;
 }
 
+#heroDynamicText.is-compact {
+  font-size: clamp(1.85rem, 3.9vw, 2.8rem);
+  line-height: 1.08;
+}
+
 /* Text animation out effect */
 .text-swap-out {
   opacity: 0;
@@ -1456,6 +1461,28 @@ h3 {
   background: var(--white);
 }
 
+.form-feedback-banner {
+  width: min(1180px, calc(100% - 32px));
+  margin: 96px auto 0;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  position: relative;
+  z-index: 20;
+}
+
+.form-feedback-banner.is-success {
+  background: #edf9f0;
+  border-color: #8ec79a;
+  color: #1f5e2b;
+}
+
+.form-feedback-banner.is-error {
+  background: #fff1f1;
+  border-color: #e2a2a2;
+  color: #9b2020;
+}
+
 .media-card video {
   width: 100%;
   height: 220px;
@@ -1549,6 +1576,30 @@ h3 {
   color: #4b5d75;
   font-size: 0.92rem;
   margin: 0 0 10px;
+}
+
+.fleet-price {
+  color: #4b5d75;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.fleet-price span {
+  color: var(--blue);
+  margin-right: 6px;
+}
+
+.fleet-seat-note {
+  color: #4b5d75;
+  font-size: 0.9rem;
+  margin: 10px 0 0;
+}
+
+.fleet-seat-note span {
+  color: var(--blue);
+  font-weight: 700;
+  margin-right: 6px;
 }
 
 .fleet-status {
@@ -2917,13 +2968,26 @@ body.modal-open {
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    background: rgba(14, 10, 4, 0.98);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 248, 230, 0.98) 0%,
+      rgba(242, 223, 173, 0.97) 52%,
+      rgba(219, 182, 88, 0.95) 100%
+    );
     padding: 16px 4%;
     border-bottom: 1px solid rgba(212, 166, 42, 0.22);
   }
 
   .site-nav.open {
     display: flex;
+  }
+
+  .site-nav a {
+    color: #4c3410;
+  }
+
+  .site-nav a.active {
+    text-decoration-color: #8f6516;
   }
 
   .top-contact-wrap {
@@ -3039,7 +3103,21 @@ body.modal-open {
   }
 
   .home-reserve-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .home-reserve-grid .fleet-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-reserve-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-reserve-actions .btn {
+    width: 100%;
+    text-align: center;
   }
 
   .hero-enquiry-form {
