@@ -174,13 +174,21 @@
                 <label for="contact-flight-number">Flight Number</label>
                 <input id="contact-flight-number" name="flight_number" type="text" placeholder="Ex: DL1234">
               </div>
-              <div class="home-field span-2">
-                <label for="contact-child-seat">Child Seat Request</label>
+              <div class="home-field">
+                <label for="contact-child-seat">Child Seat Request (Optional)</label>
                 <select id="contact-child-seat" name="child_seat">
                   <option value="">No child seat needed</option>
                   <option>Newborn</option>
                   <option>Toddler</option>
                   <option>Booster</option>
+                </select>
+              </div>
+              <div class="home-field">
+                <label for="contact-stroller">Stroller (Optional)</label>
+                <select id="contact-stroller" name="stroller">
+                  <option value="">No stroller needed</option>
+                  <option>Single Stroller</option>
+                  <option>Double Stroller</option>
                 </select>
               </div>
 
@@ -196,7 +204,7 @@
             </div>
 
             <div class="contact-request-actions">
-              <p class="home-form-note">Trip details are required. Add airline, flight, and child seat details if needed.</p>
+              <p class="home-form-note">Trip details are required. Airline, flight, child seat, and stroller requests are optional.</p>
               <button type="submit" class="btn btn-gradient">Submit Request</button>
             </div>
           </form>

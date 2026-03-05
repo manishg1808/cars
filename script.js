@@ -239,6 +239,198 @@ if (ratesTables.length) {
   });
 }
 
+// Services vehicle rate filters
+(() => {
+  const section = document.querySelector(".services-suv-rates");
+  if (!section) {
+    return;
+  }
+
+  const grid = section.querySelector("[data-rate-grid]");
+  const count = section.querySelector("[data-rate-count]");
+  const filterGroup = section.querySelector("[data-rate-filters]");
+  const vehicleTabs = Array.from(section.querySelectorAll("[data-vehicle-tab]"));
+  const vehiclePanels = Array.from(section.querySelectorAll("[data-vehicle-panel]"));
+  const routeButtons = filterGroup ? Array.from(filterGroup.querySelectorAll("button")) : [];
+
+  if (!grid || !filterGroup || !vehicleTabs.length) {
+    return;
+  }
+
+  const rateRows = [
+    ["towncar", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; All WDW Disney Property Resorts", "$105.00", "$195.00"],
+    ["towncar", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; Disney Springs Hotels", "$105.00", "$195.00"],
+    ["towncar", "airport disney", ["Airport", "Disney Area"], "Orlando International Airport &harr; Flamingo Crossings", "$110.00", "$205.00"],
+    ["towncar", "airport popular", ["Airport", "Hotels"], "Orlando International Airport &harr; International Drive Hotels", "$105.00", "$195.00"],
+    ["towncar", "airport disney popular", ["Airport", "Disney Area"], "Orlando International Airport &harr; Kissimmee 192 Area Hotels", "$115.00", "$220.00"],
+    ["towncar", "airport disney", ["Airport", "Disney Area"], "Orlando International Airport &harr; Omni Championsgate / Reunion", "$130.00", "$250.00"],
+    ["towncar", "airport universal popular", ["Airport", "Universal"], "Orlando International Airport &harr; Universal Studios Area Hotels", "$105.00", "$195.00"],
+    ["towncar", "disney port popular", ["Disney", "Port Canaveral"], "All WDW Disney Property Resorts &harr; Port Canaveral", "$185.00", "$360.00"],
+    ["towncar", "disney universal popular", ["Disney", "Universal"], "All WDW Disney Property Resorts &harr; Universal Studios Area Hotels", "$85.00", "$170.00"],
+    ["towncar", "airport port popular", ["Port Canaveral", "Airport"], "Port Canaveral &harr; Orlando International Airport", "$160.00", "$315.00"],
+    ["towncar", "airport disney", ["Sanford", "Disney"], "Sanford Int'l Airport &harr; All WDW Disney Property Resorts", "$165.00", "$315.00"],
+    ["towncar", "airport port", ["Sanford", "Port Canaveral"], "Sanford Int'l Airport &harr; Port Canaveral", "$235.00", "$460.00"],
+    ["towncar", "airport universal", ["Sanford", "Universal"], "Sanford Int'l Airport &harr; Universal Studios Area Hotels", "$165.00", "$315.00"],
+    ["towncar", "disney popular", ["Sea World", "Disney"], "Sea World &harr; All WDW Disney Property Resorts", "$75.00", "$140.00"],
+    ["towncar", "universal disney popular", ["Universal", "Disney"], "Universal Studios Area Hotels &harr; All WDW Disney Property Resorts", "$85.00", "$170.00"],
+    ["towncar", "universal disney", ["Universal", "Disney Area"], "Universal Studios Area Hotels &harr; Kissimmee 192 Area Hotels", "$95.00", "$190.00"],
+    ["suv", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; All WDW Disney Property Resorts", "$140.00", "$275.00"],
+    ["suv", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; Disney Springs Hotels", "$140.00", "$275.00"],
+    ["suv", "airport popular", ["Airport", "Hotels"], "Orlando International Airport &harr; International Drive Hotels", "$140.00", "$275.00"],
+    ["suv", "airport disney popular", ["Airport", "Disney Area"], "Orlando International Airport &harr; Kissimmee 192 Area Hotels", "$155.00", "$300.00"],
+    ["suv", "airport disney", ["Airport", "Disney Area"], "Orlando International Airport &harr; Omni Championsgate / Reunion", "$165.00", "$320.00"],
+    ["suv", "airport universal popular", ["Airport", "Universal"], "Orlando International Airport &harr; Universal Studios Area Hotels", "$140.00", "$275.00"],
+    ["suv", "airport disney", ["Airport", "Resorts"], "Orlando International Airport &harr; Winter Garden Resorts", "$155.00", "$305.00"],
+    ["suv", "disney port popular", ["Disney", "Port Canaveral"], "All WDW Disney Property Resorts &harr; Port Canaveral", "$235.00", "$455.00"],
+    ["suv", "disney universal popular", ["Disney", "Universal"], "All WDW Disney Property Resorts &harr; Universal Studios Area Hotels", "$120.00", "$230.00"],
+    ["suv", "disney", ["Disney", "Resorts"], "All WDW Disney Property Resorts &harr; Winter Garden Resorts", "$130.00", "$255.00"],
+    ["suv", "airport port popular", ["Port Canaveral", "Airport"], "Port Canaveral &harr; Orlando International Airport", "$200.00", "$395.00"],
+    ["suv", "airport disney", ["Sanford", "Disney"], "Sanford Int'l Airport &harr; All WDW Disney Property Resorts", "$195.00", "$380.00"],
+    ["suv", "airport port", ["Sanford", "Port Canaveral"], "Sanford Int'l Airport &harr; Port Canaveral", "$285.00", "$560.00"],
+    ["suv", "airport universal", ["Sanford", "Universal"], "Sanford Int'l Airport &harr; Universal Studios Area Hotels", "$195.00", "$380.00"],
+    ["suv", "disney popular", ["Sea World", "Disney"], "Sea World &harr; All WDW Disney Property Resorts", "$95.00", "$180.00"],
+    ["suv", "universal disney popular", ["Universal", "Disney"], "Universal Studios Area Hotels &harr; All WDW Disney Property Resorts", "$120.00", "$230.00"],
+    ["suv", "universal disney", ["Universal", "Disney Area"], "Universal Studios Area Hotels &harr; Kissimmee 192 Area Hotels", "$110.00", "$215.00"],
+    ["van", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; All WDW Disney Property Resorts", "$225.00", "$440.00"],
+    ["van", "airport disney popular", ["Airport", "Disney"], "Orlando International Airport &harr; Disney Springs Hotels", "$225.00", "$440.00"],
+    ["van", "airport popular", ["Airport", "Hotels"], "Orlando International Airport &harr; International Drive Hotels", "$225.00", "$440.00"],
+    ["van", "airport disney popular", ["Airport", "Disney Area"], "Orlando International Airport &harr; Kissimmee 192 Area Hotels", "$245.00", "$475.00"],
+    ["van", "airport disney", ["Airport", "Disney Area"], "Orlando International Airport &harr; Omni Championsgate / Reunion", "$260.00", "$505.00"],
+    ["van", "airport universal popular", ["Airport", "Universal"], "Orlando International Airport &harr; Universal Studios Area Hotels", "$225.00", "$440.00"],
+    ["van", "disney port popular", ["Disney", "Port Canaveral"], "All WDW Disney Property Resorts &harr; Port Canaveral", "$345.00", "$675.00"],
+    ["van", "disney universal popular", ["Disney", "Universal"], "All WDW Disney Property Resorts &harr; Universal Studios Area Hotels", "$160.00", "$300.00"],
+    ["van", "airport port popular", ["Port Canaveral", "Airport"], "Port Canaveral &harr; Orlando International Airport", "$295.00", "$575.00"],
+    ["van", "airport disney", ["Sanford", "Disney"], "Sanford Int'l Airport &harr; All WDW Disney Property Resorts", "$310.00", "$595.00"],
+    ["van", "airport port", ["Sanford", "Port Canaveral"], "Sanford Int'l Airport &harr; Port Canaveral", "$395.00", "$725.00"],
+    ["van", "airport universal", ["Sanford", "Universal"], "Sanford Int'l Airport &harr; Universal Studios Area Hotels", "$310.00", "$595.00"],
+    ["van", "disney popular", ["Sea World", "Disney"], "Sea World &harr; All WDW Disney Property Resorts", "$150.00", "$290.00"],
+    ["van", "universal disney popular", ["Universal", "Disney"], "Universal Studios Area Hotels &harr; All WDW Disney Property Resorts", "$155.00", "$300.00"],
+    ["van", "universal disney", ["Universal", "Disney Area"], "Universal Studios Area Hotels &harr; Kissimmee 192 Area Hotels", "$170.00", "$340.00"]
+  ];
+
+  let activeVehicle =
+    vehicleTabs.find((button) => button.classList.contains("active"))?.getAttribute("data-vehicle-tab") ||
+    vehicleTabs[0].getAttribute("data-vehicle-tab");
+  let activeFilter = "all";
+  const vehicleLabels = {
+    towncar: "Town Car",
+    suv: "SUV",
+    van: "Van"
+  };
+
+  const renderRows = (rows) =>
+    rows
+      .map(([, , badges, route, oneWay, roundTrip]) => {
+        const badgeMarkup = badges
+          .map((badge) => `<span class="services-rate-badge">${badge}</span>`)
+          .join("");
+
+        return `
+          <article class="services-rate-row">
+            <div class="services-rate-route">
+              <div class="services-rate-row-badges">${badgeMarkup}</div>
+              <h3>${route}</h3>
+            </div>
+            <div class="services-rate-fare">
+              <span>One Way</span>
+              <strong>${oneWay}</strong>
+              <a href="contact.html" class="services-rate-btn secondary">Book One-way</a>
+            </div>
+            <div class="services-rate-fare">
+              <span>Round Trip</span>
+              <strong>${roundTrip}</strong>
+              <a href="contact.html" class="services-rate-btn primary">Book Roundtrip</a>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+
+  const updateTabs = () => {
+    vehicleTabs.forEach((button) => {
+      const isActive = button.getAttribute("data-vehicle-tab") === activeVehicle;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    vehiclePanels.forEach((panel) => {
+      panel.hidden = panel.getAttribute("data-vehicle-panel") !== activeVehicle;
+    });
+  };
+
+  const updateFilters = () => {
+    routeButtons.forEach((button) => {
+      const filter = button.getAttribute("data-filter");
+      const isActive = filter === activeFilter;
+
+      if (filter === "clear") {
+        button.classList.remove("active");
+        button.setAttribute("aria-pressed", "false");
+        return;
+      }
+
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  };
+
+  const updateRates = () => {
+    const visibleRows = rateRows.filter(([vehicle, tags]) => {
+      if (vehicle !== activeVehicle) {
+        return false;
+      }
+
+      if (activeFilter === "all") {
+        return true;
+      }
+
+      const tagList = tags.split(/\s+/).filter(Boolean);
+      return tagList.includes(activeFilter);
+    });
+
+    grid.innerHTML = visibleRows.length
+      ? renderRows(visibleRows)
+      : '<p class="services-rate-empty">No routes match this filter.</p>';
+
+    if (count) {
+      count.textContent = `${vehicleLabels[activeVehicle] || "Vehicle"}: ${visibleRows.length} routes shown`;
+    }
+
+    updateTabs();
+    updateFilters();
+  };
+
+  vehicleTabs.forEach((button) => {
+    button.addEventListener("click", () => {
+      const vehicle = button.getAttribute("data-vehicle-tab");
+      if (!vehicle || vehicle === activeVehicle) {
+        return;
+      }
+
+      activeVehicle = vehicle;
+      activeFilter = "all";
+      updateRates();
+    });
+  });
+
+  routeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      if (!filter || filter === "all" || filter === "clear") {
+        activeFilter = "all";
+        updateRates();
+        return;
+      }
+
+      activeFilter = filter;
+      updateRates();
+    });
+  });
+
+  updateRates();
+})();
+
 // Scroll to top button with progress ring section
 (() => {
   if (!document.body) {

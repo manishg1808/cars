@@ -115,7 +115,7 @@
             <p><span><i class="ri-user-3-line"></i></span> Passengers: 3</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 3 Bags</p>
           </div>
-          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
+          <p class="fleet-seat-note"><span>Child Seats Free:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -132,7 +132,7 @@
             <p><span><i class="ri-group-line"></i></span> Passengers: 6</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 6 Bags</p>
           </div>
-          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
+          <p class="fleet-seat-note"><span>Child Seats Free:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -149,7 +149,7 @@
             <p><span><i class="ri-group-line"></i></span> Passengers: 14</p>
             <p><span><i class="ri-briefcase-4-line"></i></span> Luggage: 12 Bags</p>
           </div>
-          <p class="fleet-seat-note"><span>Child Seats:</span> Newborn, Toddler, Booster</p>
+          <p class="fleet-seat-note"><span>Child Seats Free:</span> Newborn, Toddler, Booster</p>
           <div class="fleet-actions">
             <a href="tel:+14073414310" class="fleet-link">Call Now</a>
             <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -327,7 +327,7 @@
             <div class="top-route-footer">
               <div class="top-route-price">
                 <span>From</span>
-                <strong>$185</strong>
+                <strong>$195</strong>
                 <small>round trip</small>
               </div>
               <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -348,7 +348,7 @@
             <div class="top-route-footer">
               <div class="top-route-price">
                 <span>From</span>
-                <strong>$185</strong>
+                <strong>$195</strong>
                 <small>round trip</small>
               </div>
               <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -369,7 +369,7 @@
             <div class="top-route-footer">
               <div class="top-route-price">
                 <span>From</span>
-                <strong>$290</strong>
+                <strong>$270</strong>
                 <small>round trip</small>
               </div>
               <a href="contact.html" class="btn btn-gradient">Book Now</a>
@@ -383,6 +383,45 @@
     </div>
   </section>
   <!-- Top routes section ends -->
+
+  <!-- Grocery stop section starts -->
+  <section class="section grocery-stop-section">
+    <div class="container">
+      <div class="grocery-stop-card">
+        <div class="grocery-stop-copy">
+          <p class="grocery-stop-kicker">Publix Grocery Stop</p>
+          <h2>Need to Add a Publix Grocery Stop to Your Trip?</h2>
+          <p class="grocery-stop-lead">All 20 minute Grocery stops will be at Publix located at 9930 Universal Blvd, Orlando FL. It's advised to place your order in advance.</p>
+          <p class="grocery-stop-text">Call Publix at <a href="tel:+14079968400">(407) 996-8400</a> or through their <a href="https://www.publix.com/" target="_blank" rel="noopener noreferrer">website here</a> to order ahead.</p>
+          <p class="grocery-stop-note">This is very important. Please add the grocery stop during reservation. This is for free.</p>
+          <div class="grocery-stop-actions">
+            <a href="contact.html" class="btn btn-gradient">Add Grocery Stop</a>
+          </div>
+        </div>
+        <aside class="grocery-stop-details" aria-label="Grocery stop details">
+          <h3>Important Details</h3>
+          <div class="grocery-stop-detail-grid">
+            <article class="grocery-stop-detail-item">
+              <span class="grocery-stop-detail-label">Grocery Stop</span>
+              <strong>Free</strong>
+              <p>We have to open a window for adding a grocery. This is for free.</p>
+            </article>
+            <article class="grocery-stop-detail-item">
+              <span class="grocery-stop-detail-label">Driver Tip</span>
+              <strong>20%</strong>
+              <p>20% tip to the driver.</p>
+            </article>
+            <article class="grocery-stop-detail-item">
+              <span class="grocery-stop-detail-label">Payment</span>
+              <strong>Cash or Credit</strong>
+              <p>Cash or credit. This is very important.</p>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Grocery stop section ends -->
 
   <!-- How it works section starts -->
   <section class="section how-works-section">
@@ -511,13 +550,21 @@
               <label for="home-flight-number">Flight Number</label>
               <input id="home-flight-number" name="flight_number" type="text" placeholder="Ex: DL1234">
             </div>
-            <div class="home-field span-2">
-              <label for="home-child-seat">Child Seat Request</label>
+            <div class="home-field">
+              <label for="home-child-seat">Child Seat Request (Optional)</label>
               <select id="home-child-seat" name="child_seat">
                 <option value="">No child seat needed</option>
                 <option>Newborn</option>
                 <option>Toddler</option>
                 <option>Booster</option>
+              </select>
+            </div>
+            <div class="home-field">
+              <label for="home-stroller">Stroller (Optional)</label>
+              <select id="home-stroller" name="stroller">
+                <option value="">No stroller needed</option>
+                <option>Single Stroller</option>
+                <option>Double Stroller</option>
               </select>
             </div>
 
@@ -532,7 +579,7 @@
           </div>
 
           <div class="contact-request-actions">
-            <p class="home-form-note">Trip details are required. Add airline, flight, and child seat details if needed.</p>
+            <p class="home-form-note">Trip details are required. Airline, flight, child seat, and stroller requests are optional.</p>
             <button type="submit" class="btn btn-gradient">Submit Request</button>
           </div>
         </form>

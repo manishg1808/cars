@@ -851,6 +851,139 @@ h3 {
   margin-top: 16px;
 }
 
+/* Home grocery stop section styles */
+.grocery-stop-section {
+  background:
+    radial-gradient(circle at top left, rgba(212, 166, 42, 0.08), transparent 28%),
+    linear-gradient(180deg, #fbf8f0 0%, #f7f1e3 100%);
+}
+
+.grocery-stop-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(240px, 0.82fr);
+  gap: 18px;
+  align-items: stretch;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid #e4d4ad;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 247, 236, 0.98) 100%);
+  box-shadow: 0 12px 26px rgba(61, 44, 11, 0.07);
+}
+
+.grocery-stop-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grocery-stop-kicker {
+  margin-bottom: 10px;
+  color: #6b4a0e;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.grocery-stop-copy h2 {
+  max-width: 10ch;
+  margin-bottom: 12px;
+  font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+  line-height: 1.06;
+  color: #2a1804;
+}
+
+.grocery-stop-lead {
+  max-width: 42rem;
+  margin-bottom: 14px;
+  color: #5a431d;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.grocery-stop-text {
+  max-width: 42rem;
+  color: #5a431d;
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.grocery-stop-text a {
+  color: #2a1804;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.grocery-stop-note {
+  margin-top: 16px;
+  color: #7a5920;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.grocery-stop-actions {
+  margin-top: 18px;
+}
+
+.grocery-stop-actions .btn {
+  min-width: 170px;
+  padding: 10px 16px;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+.grocery-stop-details {
+  border: 1px solid #e8dcc0;
+  border-radius: 18px;
+  padding: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(212, 166, 42, 0.14), transparent 26%),
+    linear-gradient(180deg, #fffef9 0%, #f7efdc 100%);
+}
+
+.grocery-stop-details h3 {
+  margin-bottom: 12px;
+  color: #241403;
+  font-size: 1.2rem;
+}
+
+.grocery-stop-detail-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.grocery-stop-detail-item {
+  padding: 12px 12px;
+  border: 1px solid #eadfc6;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.grocery-stop-detail-label {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: #8b6718;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.grocery-stop-detail-item strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #241403;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.grocery-stop-detail-item p {
+  color: #5f4a26;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
 /* Home how it works timeline section styles */
 .how-works-section {
   background: #f7fbff;
@@ -1512,10 +1645,30 @@ h3 {
   color: var(--muted);
 }
 
+.fleet-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid rgba(140, 103, 18, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 250, 237, 0.88);
+  color: #7a5710;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
 .fleet-simple-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+}
+
+.fleet-child-seat-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .fleet-simple-item {
@@ -1578,6 +1731,32 @@ h3 {
   margin: 0 0 10px;
 }
 
+.fleet-card-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: #f7eed6;
+  color: #7a5710;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fleet-feature-line {
+  margin: 10px 0 0;
+  color: #4b5d75;
+  font-size: 0.9rem;
+}
+
+.fleet-feature-line span {
+  color: #7a5710;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
 .fleet-price {
   color: #4b5d75;
   font-size: 0.92rem;
@@ -1634,6 +1813,120 @@ h3 {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 12px;
+}
+
+.fleet-premium-card {
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf7ec 100%);
+  box-shadow: 0 16px 28px rgba(84, 63, 20, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.fleet-addon-card {
+  border-radius: 24px;
+  background: linear-gradient(180deg, #fffdfa 0%, #f8f1de 100%);
+  box-shadow: 0 16px 28px rgba(84, 63, 20, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.fleet-premium-card:hover,
+.fleet-addon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 34px rgba(84, 63, 20, 0.14);
+  border-color: #d4bf8b;
+}
+
+.fleet-premium-card img,
+.fleet-addon-card img {
+  border-radius: 18px;
+}
+
+.fleet-premium-card img.fleet-image-contain,
+.fleet-addon-card img.fleet-image-contain {
+  background: linear-gradient(180deg, #fffaf0 0%, #f4ebd5 100%);
+  padding: 10px;
+}
+
+.fleet-family-extras {
+  margin-top: 34px;
+}
+
+.fleet-intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 18px;
+  align-items: end;
+}
+
+.fleet-intro-split .fleet-intro-support {
+  margin: 0;
+}
+
+.fleet-extras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.fleet-extra-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.95fr) minmax(0, 1.05fr);
+  border: 1px solid #dbc89b;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fffef9 0%, #f9f1db 100%);
+  box-shadow: 0 22px 36px rgba(84, 63, 20, 0.1);
+}
+
+.fleet-extra-media {
+  position: relative;
+  min-height: 100%;
+  background: linear-gradient(180deg, #f1ebe1 0%, #ebe6de 100%);
+}
+
+.fleet-extra-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.fleet-extra-body {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 24px;
+}
+
+.fleet-extra-body h3 {
+  margin: 0;
+  color: #2a1a08;
+  font-size: 1.35rem;
+}
+
+.fleet-extra-body p {
+  color: #4f5a67;
+}
+
+.fleet-extra-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fleet-extra-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #33485f;
+}
+
+.fleet-extra-list i {
+  color: #8c6712;
+  margin-top: 2px;
 }
 
 /* Gallery section styles */
@@ -1946,6 +2239,392 @@ body.modal-open {
 
 .contact-form-modern textarea {
   resize: vertical;
+}
+
+/* Services rates section styles */
+.services-suv-rates {
+  background:
+    radial-gradient(circle at top left, rgba(212, 166, 42, 0.08), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, #f8f2e4 100%);
+}
+
+.services-rates-shell {
+  padding: 30px;
+  border: 1px solid #e2d3ad;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #fffefb 0%, #f8f1e0 100%);
+  box-shadow: 0 20px 42px rgba(59, 42, 10, 0.08);
+}
+
+.services-rates-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.services-rates-kicker {
+  margin-bottom: 8px;
+  color: #8a6414;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-rates-head h2 {
+  margin-bottom: 8px;
+  color: #231406;
+}
+
+.services-rates-head .page-intro {
+  max-width: 760px;
+  margin: 0;
+  color: #5d4c2c;
+}
+
+.services-rates-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.services-rate-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #dcc48a;
+  border-radius: 999px;
+  color: #3a270d;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.services-vehicle-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 0;
+  padding: 4px;
+  border: 1px solid #e3d4ae;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 252, 244, 0.95) 0%, rgba(249, 241, 223, 0.95) 100%);
+}
+
+.services-vehicle-tabs button {
+  flex: 1 1 0;
+  min-height: 44px;
+  min-width: 0;
+  padding: 0 10px;
+  border: 1px solid #d8c6a0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #453313;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.services-vehicle-tabs button:hover,
+.services-vehicle-tabs button.active {
+  background: linear-gradient(90deg, #1d1307 0%, #c89a22 100%);
+  color: #ffffff;
+  border-color: rgba(29, 19, 7, 0.36);
+  transform: translateY(-1px);
+}
+
+.services-rates-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 35%) minmax(0, 65%);
+  gap: 18px;
+  align-items: start;
+}
+
+.services-rate-media-column {
+  display: grid;
+  gap: 12px;
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
+
+.services-rate-table-column {
+  min-width: 0;
+}
+
+.suv-rate-vehicle-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #e7dcc1;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 18px rgba(61, 44, 11, 0.05);
+}
+
+.suv-rate-vehicle-card[hidden] {
+  display: none;
+}
+
+.suv-rate-vehicle-card img {
+  width: 100%;
+  height: 215px;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #faf6ed 0%, #f2e7cd 100%);
+  object-fit: contain;
+  display: block;
+}
+
+.suv-rate-vehicle-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f6ead0;
+  color: #8d6513;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.suv-rate-vehicle-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.suv-rate-vehicle-features li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid #eee3c8;
+  border-radius: 10px;
+  color: #5f4a26;
+  background: #fcf9f2;
+  font-size: 0.8rem;
+}
+
+.suv-rate-vehicle-features i {
+  color: #a57a17;
+  font-size: 0.88rem;
+}
+
+.services-rate-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 96px;
+  z-index: 22;
+  padding: 10px 12px;
+  border: 1px solid #eadfc6;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 253, 247, 0.98) 0%, rgba(249, 241, 222, 0.98) 100%);
+  box-shadow: 0 8px 18px rgba(63, 46, 12, 0.08);
+  margin-bottom: 14px;
+}
+
+.services-rate-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.services-rate-filters button {
+  flex: 0 0 auto;
+  border: 1px solid #dfc889;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4a3512;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.services-rate-filters::-webkit-scrollbar {
+  height: 4px;
+}
+
+.services-rate-filters::-webkit-scrollbar-thumb {
+  background: rgba(107, 74, 14, 0.25);
+  border-radius: 999px;
+}
+
+.services-rate-filters button:hover,
+.services-rate-filters button.active {
+  background: linear-gradient(90deg, #1d1307 0%, #c89a22 100%);
+  color: #ffffff;
+  border-color: rgba(29, 19, 7, 0.4);
+  transform: translateY(-1px);
+}
+
+.services-rate-count {
+  color: #6c5630;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.services-rate-table-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) repeat(2, minmax(160px, 0.8fr));
+  gap: 0;
+  padding: 0 14px 8px;
+}
+
+.services-rate-table-head span {
+  color: #7d6740;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-rate-grid {
+  display: grid;
+  gap: 0;
+  border: 1px solid #e5d8b9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.services-rate-card {
+  display: none;
+}
+
+.services-rate-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) repeat(2, minmax(160px, 0.8fr));
+  gap: 0;
+  align-items: stretch;
+  padding: 12px 14px;
+  border-bottom: 1px solid #efe5cd;
+  background: transparent;
+  box-shadow: none;
+}
+
+.services-rate-row:last-child {
+  border-bottom: none;
+}
+
+.services-rate-row[hidden] {
+  display: none;
+}
+
+.services-rate-route {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding-right: 12px;
+}
+
+.services-rate-row-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.services-rate-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f4ead4;
+  color: #866113;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.services-rate-route h3 {
+  margin: 0;
+  color: #241403;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.services-rate-fare {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 1px solid #ece2ca;
+}
+
+.services-rate-fare span {
+  color: #7a6541;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.services-rate-fare strong {
+  color: #231406;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.services-rate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  width: fit-content;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.services-rate-btn.primary {
+  background: linear-gradient(90deg, #1d1307 0%, #c89a22 100%);
+  color: #ffffff;
+}
+
+.services-rate-btn.secondary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #2b1a06;
+  border-color: #ddc684;
+}
+
+.services-rate-empty {
+  margin: 0;
+  padding: 22px;
+  border: 1px dashed #ddc684;
+  border-radius: 20px;
+  color: #6c5630;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: center;
 }
 
 /* Services rates table section styles */
@@ -2482,6 +3161,15 @@ body.modal-open {
     }
 
   @media (max-width: 1200px) {
+    .services-rates-layout {
+      grid-template-columns: minmax(260px, 38%) minmax(0, 62%);
+    }
+
+    .services-rate-table-head,
+    .services-rate-row {
+      grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(150px, 0.75fr));
+    }
+
     .footer-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -3154,6 +3842,19 @@ body.modal-open {
     grid-column: auto;
   }
 
+  .fleet-intro-split,
+  .fleet-extra-card {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-extras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-extra-media img {
+    min-height: 260px;
+  }
+
   .fleet-simple-list,
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -3249,6 +3950,68 @@ body.modal-open {
   .home-request-quick {
     position: static;
     top: auto;
+  }
+
+  .services-rates-head,
+  .services-rate-toolbar {
+    align-items: flex-start;
+  }
+
+  .services-rate-toolbar {
+    top: 86px;
+  }
+
+  .services-rates-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .services-rate-media-column {
+    position: static;
+    top: auto;
+  }
+
+  .suv-rate-vehicle-card {
+    gap: 9px;
+  }
+
+  .suv-rate-vehicle-card img {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  .suv-rate-vehicle-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .services-rate-table-head {
+    display: none;
+  }
+
+  .services-rate-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .services-rate-route {
+    grid-column: 1 / -1;
+  }
+
+  .services-rate-fare {
+    padding-left: 0;
+    padding-top: 12px;
+    border-left: none;
+    border-top: 1px solid #ece2ca;
+  }
+
+  .grocery-stop-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .grocery-stop-copy h2,
+  .grocery-stop-lead,
+  .grocery-stop-text {
+    max-width: none;
   }
 
   .how-works-timeline {
@@ -3478,6 +4241,114 @@ body.modal-open {
   }
 
   @media (max-width: 640px) {
+    .services-suv-rates {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .services-rates-shell {
+      padding: 18px;
+      border-radius: 24px;
+    }
+
+    .services-vehicle-tabs button {
+      flex: 1 1 0;
+      min-width: 0;
+      min-height: 40px;
+      font-size: 0.78rem;
+      padding: 0 8px;
+    }
+
+    .suv-rate-vehicle-card {
+      gap: 8px;
+      padding: 12px;
+      border-radius: 22px;
+    }
+
+    .suv-rate-vehicle-card img {
+      height: 150px;
+      min-height: 150px;
+      padding: 10px;
+    }
+
+    .suv-rate-vehicle-features {
+      grid-template-columns: 1fr;
+    }
+
+    .suv-rate-vehicle-features li {
+      font-size: 0.76rem;
+    }
+
+    .services-rate-row {
+      grid-template-columns: 1fr;
+      padding: 16px;
+      border-radius: 18px;
+    }
+
+    .services-rate-fare {
+      padding-top: 12px;
+    }
+
+    .services-rate-btn {
+      width: 100%;
+    }
+
+    .services-rate-filters button,
+    .services-rate-count {
+      font-size: 0.78rem;
+    }
+
+    .services-rate-toolbar {
+      top: 78px;
+      padding: 8px 10px;
+    }
+
+    .grocery-stop-card {
+      padding: 18px;
+      border-radius: 20px;
+      gap: 16px;
+    }
+
+    .grocery-stop-copy h2 {
+      font-size: clamp(1.7rem, 9vw, 2.5rem);
+    }
+
+    .grocery-stop-lead,
+    .grocery-stop-text,
+    .grocery-stop-note {
+      font-size: 0.92rem;
+    }
+
+    .grocery-stop-details {
+      padding: 16px;
+      border-radius: 18px;
+    }
+
+    .grocery-stop-details h3 {
+      font-size: 1.25rem;
+    }
+
+    .grocery-stop-detail-item strong {
+      font-size: 1.05rem;
+    }
+
+    .grocery-stop-actions .btn {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .fleet-premium-card,
+    .fleet-addon-card,
+    .fleet-extra-card {
+      border-radius: 22px;
+    }
+
+    .fleet-premium-card img,
+    .fleet-addon-card img,
+    .fleet-extra-media img {
+      border-radius: 16px;
+    }
+
     .inner-banner {
       min-height: 260px;
       padding-top: 84px;
