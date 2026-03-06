@@ -77,6 +77,31 @@ const serviceTextRight = document.querySelector(".service-text-right");
 const countUpItems = document.querySelectorAll(".count-up");
 const ratesTables = document.querySelectorAll(".rates-table");
 
+const insertFeedbackBanner = (anchor, banner) => {
+  if (!anchor || anchor === document.body) {
+    document.body.prepend(banner);
+    return;
+  }
+
+  if (anchor.parentNode) {
+    anchor.parentNode.insertBefore(banner, anchor);
+  }
+};
+
+const showFormFeedback = (message, tone = "success", anchor = document.querySelector(".page-main, .hero")) => {
+  document.querySelectorAll(".form-feedback-banner[data-runtime-feedback='true']").forEach((banner) => {
+    banner.remove();
+  });
+
+  const banner = document.createElement("div");
+  banner.dataset.runtimeFeedback = "true";
+  banner.className = `form-feedback-banner is-${tone}`;
+  banner.textContent = message;
+
+  insertFeedbackBanner(anchor, banner);
+  return banner;
+};
+
 // Shared form submit feedback
 (() => {
   const params = new URLSearchParams(window.location.search);
@@ -86,23 +111,34 @@ const ratesTables = document.querySelectorAll(".rates-table");
     return;
   }
 
-  const banner = document.createElement("div");
-  banner.className = `form-feedback-banner ${status === "success" ? "is-success" : "is-error"}`;
-  banner.textContent =
+  showFormFeedback(
     status === "success"
       ? "Your request was sent successfully. We will contact you shortly."
-      : "We could not send your request right now. Please try again or call us directly.";
-
-  const anchor = document.querySelector(".page-main, .hero, body");
-  if (anchor && anchor.parentNode) {
-    anchor.parentNode.insertBefore(banner, anchor);
-  }
+      : "We could not send your request right now. Please try again or call us directly.",
+    status === "success" ? "success" : "error",
+    document.querySelector(".page-main, .hero")
+  );
 
   params.delete("form_status");
   const cleanQuery = params.toString();
   const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ""}${window.location.hash}`;
   window.history.replaceState({}, document.title, cleanUrl);
 })();
+
+document.addEventListener("submit", (event) => {
+  const form = event.target;
+  if (!(form instanceof HTMLFormElement) || form.dataset.demoForm !== "true") {
+    return;
+  }
+
+  event.preventDefault();
+  showFormFeedback(
+    "Frontend demo only. Backend form handling is not included in this repository.",
+    "info",
+    form
+  );
+  form.reset();
+});
 
 // Gallery image popup (lightbox) section
 if (galleryItems.length && galleryLightbox && lightboxImage && lightboxCaption && lightboxClose) {
@@ -536,9 +572,7 @@ if (countUpItems.length) {
         <h2 id="quoteModalTitle">Quick Quote Request</h2>
         <p>Share your trip details and our team will contact you shortly.</p>
 
-        <form class="quote-modal-form" action="submit-form.php" method="post">
-          <input type="hidden" name="form_title" value="Quick Quote Modal">
-          <input type="hidden" name="redirect_to" value="${window.location.pathname.split("/").pop() || "index.html"}">
+        <form class="quote-modal-form" action="#" method="post" data-demo-form="true">
           <h3>Basic Contact Info</h3>
           <div class="quote-modal-grid two">
             <div>

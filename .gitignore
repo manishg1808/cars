@@ -1,0 +1,3 @@
+*.php
+PHPMailer/
+_git_push_tmp/
